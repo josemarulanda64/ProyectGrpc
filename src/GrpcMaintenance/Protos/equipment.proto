@@ -1,0 +1,45 @@
+syntax = "proto3";
+package equipment;
+option csharp_namespace = "GrpcMaintenance.Protos.Equipment";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+service EquipmentService {
+  rpc CreateEquipment (CreateEquipmentRequest) returns (EquipmentResponse){
+    option(google.api.http)={
+      post:"/v1/equipment",
+      body:"*"
+    };
+  }
+  rpc GetEquipmentById (GetEquipmentByIdRequest) returns (EquipmentResponse){
+    option(google.api.http)={
+      get:"/v1/equipments/ip",
+      body:"*"
+    };
+  }
+  rpc GetAllEquipments (google.protobuf.Empty) returns (EquipmentsResponse){
+    option(google.api.http)={
+      get:"/v1/equipments",
+    };
+  }
+}
+
+message CreateEquipmentRequest {
+  string name = 1;
+  string serialNumber = 2;
+}
+
+message GetEquipmentByIdRequest {
+  int32 id = 1;
+}
+
+message EquipmentResponse {
+  int32 id = 1;
+  string name = 2;
+  string serialNumber = 3;
+}
+
+message EquipmentsResponse {
+  repeated EquipmentResponse equipments = 1;
+}

@@ -1,0 +1,62 @@
+syntax = "proto3";
+package users;
+option csharp_namespace = "GrpcMaintenance.Protos.User";
+
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (UserResponse){
+    option(google.api.http)={
+      post:"/v1/user",
+      body:"*"
+    };
+  }
+  rpc GetUserById (GetUserByIdRequest) returns (UserResponse){
+    option(google.api.http)={
+      get:"/v1/user/ip",
+      body:"*"
+    };
+  }
+  rpc GetAllUsers (google.protobuf.Empty) returns (UsersResponse){
+    option(google.api.http)={
+      get:"/v1/users",
+    };
+  }
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse){
+    option(google.api.http)={
+      delete:"/v1/user",
+      body:"*"
+    };
+  }
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string role = 2;   // 👈 AGREGADO
+
+}
+
+message GetUserByIdRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  int32 id = 1;
+  string name = 2;
+  string role = 3;
+}
+
+message UsersResponse {
+  repeated UserResponse users = 1;
+}
+
+message DeleteUserRequest{
+  int32 id = 1;
+}
+
+message DeleteUserResponse{
+  int32 id = 1;
+}

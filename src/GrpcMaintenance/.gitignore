@@ -1,0 +1,133 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+.idea/**
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Build folder
+[Bb]uild/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+
+# Local NuGet cache
+~/.nuget/packages/
+~/.nuget/NuGetFallbackFolder
+
+# Package references
+packages/
+.nuget/
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Database files - IMPORTANT: Ignore SQLite database
+*.db
+*.db-shm
+*.db-wal
+Mantenimiento.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.txt~
+*.bak
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# dotnet CLI files
+.dotnet/
+.dotnet-version
+
+# MSBuild Binary and Structured Log
+*.binlog
+
+# NuGet Lock files
+packages.lock.json
+
+# Entity Framework migrations lock file (optional)
+*.efcore.lock.json
+
+# Publish Profiles
+PublishProfiles/
+
+# Any generated Proto files in bin/obj
+obj/Debug/net8.0/Protos/
+obj/Release/net8.0/Protos/
+
+# User Secrets
+secrets.json
+appsettings.Local.json
+
+# Coverage reports
+coverage/
+*.coverage
+
+cd D:\grpcNet\ProyectoGrpc
+git config user.name "josemarulanda64"
+git config user.email "josemarulanda64@gmail.com"
+# To confirm:
+git config --list --local

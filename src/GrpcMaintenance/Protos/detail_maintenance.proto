@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+
+option csharp_namespace = "GrpcMaintenance.Protos.DetailMaintenance";
+package detailmaintenance;
+
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+
+service DetailMaintenanceService {
+  rpc CreateDetail (CreateDetailRequest) returns (DetailResponse){
+    option(google.api.http)={
+      post:"/v1/detail",
+      body:"*"
+
+    };
+  }
+  rpc GetDetailsByOrder (GetDetailsByOrderRequest) returns (DetailsResponse){
+    option(google.api.http)={
+      get:"/v1/details",
+    };
+  }
+}
+
+message CreateDetailRequest {
+  int32 maintenanceOrderId = 1;
+  string description = 2;
+  string date = 3; // ISO string
+}
+
+message GetDetailsByOrderRequest {
+  int32 maintenanceOrderId = 1;
+}
+
+message DetailResponse {
+  int32 id = 1;
+  int32 maintenanceOrderId = 2;
+  string description = 3;
+  string date = 4;
+}
+
+message DetailsResponse {
+  repeated DetailResponse details = 1;
+}
